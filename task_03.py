@@ -20,16 +20,16 @@ def lexicographics(to_analyze):
     mintrk = len(seq)
     wmax = 0
     wmin = 0
-    wc = []
+    wcnt = []
     for line in seq:
         words = line.split()
         wcur = len(words)
         wmax = max(maxtrk, wcur)
         wmin = min(mintrk, wcur)
-        wc.append(wcur)
+        wcnt.append(wcur)
         maxtrk = wmax
         mintrk = wmin
-    return (wmax, wmin, Decimal(sum(wc))/Decimal(len(wc)))
+    return (wmax, wmin, Decimal(sum(wcnt))/Decimal(len(wcnt)))
 
 if __name__ == '__main__':
     import data
